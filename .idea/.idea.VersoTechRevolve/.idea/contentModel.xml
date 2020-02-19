@@ -210,9 +210,7 @@
             <e p="App.test.tsx" t="Include" />
             <e p="App.tsx" t="Include" />
             <e p="assets" t="Include">
-              <e p=".DS_Store" t="Include" />
               <e p="img" t="Include">
-                <e p=".DS_Store" t="Include" />
                 <e p="avatars" t="Include">
                   <e p="avatar-2.jpg" t="Include" />
                   <e p="avatar-3.jpg" t="Include" />
@@ -604,7 +602,6 @@
               <e p="Landing.js" t="Include" />
             </e>
             <e p="Pages" t="Include">
-              <e p=".DS_Store" t="Include" />
               <e p="auth" t="Include">
                 <e p="Page404.js" t="Include" />
                 <e p="Page500.js" t="Include" />
@@ -636,6 +633,9 @@
                   <e p="Polar.js" t="Include" />
                   <e p="Radar.js" t="Include" />
                 </e>
+              </e>
+              <e p="counter" t="Include">
+                <e p="Counter.js" t="Include" />
               </e>
               <e p="dashboards" t="Include">
                 <e p="Analytics" t="Include">
@@ -786,7 +786,6 @@
             </e>
             <e p="react-app-env.d.ts" t="Include" />
             <e p="redux" t="Include">
-              <e p=".DS_Store" t="Include" />
               <e p="actions" t="Include">
                 <e p="layoutActions.js" t="Include" />
                 <e p="sidebarActions.js" t="Include" />
@@ -798,9 +797,6 @@
                 <e p="layoutReducer.js" t="Include" />
                 <e p="sidebarReducers.js" t="Include" />
                 <e p="themeReducer.js" t="Include" />
-              </e>
-              <e p="store" t="Include">
-                <e p="index.js" t="Include" />
               </e>
             </e>
             <e p="registerServiceWorker.ts" t="Include" />

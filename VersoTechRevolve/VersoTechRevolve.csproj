@@ -398,6 +398,7 @@
         <Content Include="ClientApp\src\pages\charts\Chartjs\Pie.js" />
         <Content Include="ClientApp\src\pages\charts\Chartjs\Polar.js" />
         <Content Include="ClientApp\src\pages\charts\Chartjs\Radar.js" />
+        <Content Include="ClientApp\src\pages\counter\Counter.js" />
         <Content Include="ClientApp\src\pages\dashboards\Analytics\BarChart.js" />
         <Content Include="ClientApp\src\pages\dashboards\Analytics\Header.js" />
         <Content Include="ClientApp\src\pages\dashboards\Analytics\index.js" />
@@ -513,7 +514,6 @@
         <Content Include="ClientApp\src\redux\reducers\layoutReducer.js" />
         <Content Include="ClientApp\src\redux\reducers\sidebarReducers.js" />
         <Content Include="ClientApp\src\redux\reducers\themeReducer.js" />
-        <Content Include="ClientApp\src\redux\store\index.js" />
         <Content Include="ClientApp\src\routes\index.js" />
         <Content Include="ClientApp\src\routes\Routes.js" />
         <Content Include="ClientApp\src\services\themeService.js" />

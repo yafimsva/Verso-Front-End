@@ -19,6 +19,9 @@ import {
 // Landing
 import Landing from "../pages/landing/Landing";
 
+//Counter
+import Counterr from "../pages/counter/Counter";
+
 // Auth
 import SignIn from "../pages/auth/SignIn";
 import SignUp from "../pages/auth/SignUp";
@@ -36,6 +39,7 @@ import ThemeModern from "../pages/layouts/ThemeModern";
 
 // Misc
 import Blank from "../pages/misc/Blank";
+
 
 // UI Elements
 import Alerts from "../pages/ui-elements/Alerts";
@@ -67,6 +71,7 @@ import Introduction from "../pages/docs/Introduction";
 import Installation from "../pages/docs/Installation";
 import Plugins from "../pages/docs/Plugins";
 import Changelog from "../pages/docs/Changelog";
+import * as React from "react";
 
 // Dashboards
 const Default = async(() => import("../pages/dashboards/Default"));
@@ -206,7 +211,7 @@ const pageRoutes = {
       path: "/pages/blank",
       name: "Blank Page",
       component: Blank
-    }
+    },
   ]
 };
 
@@ -514,6 +519,13 @@ const notificationsRoutes = {
   children: null
 };
 
+const counterRoutes = {
+  path: "/counter",
+  name: "Counter",
+  component: Counterr,
+  children: null
+};
+
 const mapRoutes = {
   path: "/maps",
   name: "Maps",
@@ -555,6 +567,7 @@ const privateRoutes = {
 
 // Dashboard specific routes
 export const dashboard = [
+    counterRoutes,
   dashboardRoutes,
   pageRoutes,
   layoutRoutes,
@@ -580,6 +593,7 @@ export const page = [authRoutes];
 
 // All routes
 export default [
+    counterRoutes,
   dashboardRoutes,
   pageRoutes,
   authRoutes,

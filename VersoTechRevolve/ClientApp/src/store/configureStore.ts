@@ -3,6 +3,9 @@ import thunk from 'redux-thunk';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { History } from 'history';
 import { ApplicationState, reducers } from './';
+import layout from "../redux/reducers/layoutReducer";
+import sidebar from "../redux/reducers/sidebarReducers";
+import theme from "../redux/reducers/themeReducer";
 
 export default function configureStore(history: History, initialState?: ApplicationState) {
     const middleware = [
@@ -12,6 +15,9 @@ export default function configureStore(history: History, initialState?: Applicat
 
     const rootReducer = combineReducers({
         ...reducers,
+        sidebar,
+        layout,
+        theme,
         router: connectRouter(history)
     });
 

@@ -1,4 +1,6 @@
 import React from "react";
+import Counter from "../../components/Counter";
+
 import {
   Card,
   CardBody,
@@ -11,8 +13,9 @@ import {
 
 const Blank = () => (
   <Container fluid className="p-0">
+      <Counter>
+      </Counter>
     <h1 className="h3 mb-3">Blank Page</h1>
-
     <Row>
       <Col>
         <Card>
