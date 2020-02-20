@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_VersoTechRevolve.-931741751.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_VersoTechRevolve.-853093029.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="packages" t="ExcludeRecursive" />
       <e p="VersoTechRevolve" t="IncludeRecursive">
@@ -41,6 +41,7 @@
             <e p="jest" t="IncludeRecursive" />
             <e p="jest-diff" t="IncludeRecursive" />
             <e p="jquery" t="IncludeRecursive" />
+            <e p="lodash" t="IncludeRecursive" />
             <e p="minimatch" t="IncludeRecursive" />
             <e p="node" t="IncludeRecursive" />
             <e p="prop-types" t="IncludeRecursive" />
@@ -207,7 +208,6 @@
           </e>
           <e p="README.md" t="Include" />
           <e p="src" t="Include">
-            <e p="App.test.tsx" t="Include" />
             <e p="App.tsx" t="Include" />
             <e p="assets" t="Include">
               <e p="img" t="Include">
@@ -577,16 +577,11 @@
             <e p="components" t="Include">
               <e p="Async.js" t="Include" />
               <e p="Content.js" t="Include" />
-              <e p="Counter.tsx" t="Include" />
-              <e p="FetchData.tsx" t="Include" />
               <e p="Footer.js" t="Include" />
-              <e p="Home.tsx" t="Include" />
-              <e p="Layout.tsx" t="Include" />
               <e p="Loader.js" t="Include" />
               <e p="Main.js" t="Include" />
               <e p="Navbar.js" t="Include" />
               <e p="NavMenu.css" t="Include" />
-              <e p="NavMenu.tsx" t="Include" />
               <e p="ScrollToTop.js" t="Include" />
               <e p="Settings.js" t="Include" />
               <e p="Sidebar.js" t="Include" />
@@ -594,7 +589,6 @@
               <e p="TimelineItem.js" t="Include" />
               <e p="Wrapper.js" t="Include" />
             </e>
-            <e p="custom.css" t="Include" />
             <e p="index.tsx" t="Include" />
             <e p="layouts" t="Include">
               <e p="Auth.js" t="Include" />
@@ -685,6 +679,12 @@
                   <e p="index.js" t="Include" />
                   <e p="Timeline.js" t="Include" />
                   <e p="User.js" t="Include" />
+                </e>
+                <e p="UsingAPI" t="Include">
+                  <e p="Header.js" t="Include" />
+                  <e p="index.js" t="Include" />
+                  <e p="LineChart.js" t="Include" />
+                  <e p="Statistics.js" t="Include" />
                 </e>
               </e>
               <e p="docs" t="Include">
@@ -788,6 +788,7 @@
             <e p="redux" t="Include">
               <e p="actions" t="Include">
                 <e p="layoutActions.js" t="Include" />
+                <e p="salesDataActions.js" t="Include" />
                 <e p="sidebarActions.js" t="Include" />
                 <e p="themeActions.js" t="Include" />
               </e>
@@ -795,8 +796,13 @@
               <e p="reducers" t="Include">
                 <e p="index.js" t="Include" />
                 <e p="layoutReducer.js" t="Include" />
+                <e p="salesDataReducers.js" t="Include" />
                 <e p="sidebarReducers.js" t="Include" />
                 <e p="themeReducer.js" t="Include" />
+              </e>
+              <e p="store" t="Include">
+                <e p="configureStore.ts" t="Include" />
+                <e p="index.ts" t="Include" />
               </e>
             </e>
             <e p="registerServiceWorker.ts" t="Include" />
@@ -806,12 +812,6 @@
             </e>
             <e p="services" t="Include">
               <e p="themeService.js" t="Include" />
-            </e>
-            <e p="store" t="Include">
-              <e p="configureStore.ts" t="Include" />
-              <e p="Counter.ts" t="Include" />
-              <e p="index.ts" t="Include" />
-              <e p="WeatherForecasts.ts" t="Include" />
             </e>
             <e p="vendor" t="Include">
               <e p="jquery-jvectormap-africa-mill.js" t="Include" />
@@ -830,7 +830,7 @@
           <e p="tsconfig.json" t="Include" />
         </e>
         <e p="Controllers" t="Include">
-          <e p="WeatherForecastController.cs" t="Include" />
+          <e p="SalesDataController.cs" t="Include" />
         </e>
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
@@ -849,9 +849,9 @@
         <e p="Properties" t="Include">
           <e p="launchSettings.json" t="Include" />
         </e>
+        <e p="SalesData.cs" t="Include" />
         <e p="Startup.cs" t="Include" />
         <e p="VersoTechRevolve.csproj" t="IncludeRecursive" />
-        <e p="WeatherForecast.cs" t="Include" />
       </e>
       <e p="VersoTechRevolve.sln" t="IncludeFlat" />
     </e>

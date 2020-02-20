@@ -1,17 +1,17 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import {
   landing as landingRoutes,
   dashboard as dashboardRoutes,
   page as pageRoutes
-} from "./index";
+} from './index';
 
-import DashboardLayout from "../layouts/Dashboard";
-import LandingLayout from "../layouts/Landing";
-import AuthLayout from "../layouts/Auth";
-import Page404 from "../pages/auth/Page404";
+import DashboardLayout from '../layouts/Dashboard';
+import LandingLayout from '../layouts/Landing';
+import AuthLayout from '../layouts/Auth';
+import Page404 from '../pages/auth/Page404';
 
-import ScrollToTop from "../components/ScrollToTop";
+import ScrollToTop from '../components/ScrollToTop';
 
 const childRoutes = (Layout, routes) =>
   routes.map(({ children, path, component: Component }, index) =>

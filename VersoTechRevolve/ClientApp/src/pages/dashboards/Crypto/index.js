@@ -1,11 +1,11 @@
-import React from "react";
-import { Container, Row, Col } from "reactstrap";
+import React from 'react';
+import { Container, Row, Col } from 'reactstrap';
 
-import Chart from "./Chart";
-import Header from "./Header";
-import Markets from "./Markets";
-import Orders from "./Orders";
-import Tickers from "./Tickers";
+import Chart from './Chart';
+import Header from './Header';
+import Markets from './Markets';
+import Orders from './Orders';
+import Tickers from './Tickers';
 
 const Crypto = () => (
   <Container fluid className="p-0">

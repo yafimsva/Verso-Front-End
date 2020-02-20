@@ -1,34 +1,34 @@
-import React from "react";
-import { Line } from "react-chartjs-2";
-import { connect } from "react-redux";
+import React from 'react';
+import { Line } from 'react-chartjs-2';
+import { connect } from 'react-redux';
 
-import { Card, CardBody, CardHeader, CardTitle } from "reactstrap";
+import { Card, CardBody, CardHeader, CardTitle } from 'reactstrap';
 
 const LineChart = ({ theme }) => {
   const data = {
     labels: [
-      "Jan",
-      "Feb",
-      "Mar",
-      "Apr",
-      "May",
-      "Jun",
-      "Jul",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec"
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
     ],
     datasets: [
       {
-        label: "Sales ($)",
+        label: 'Sales ($)',
         fill: true,
-        backgroundColor: "transparent",
+        backgroundColor: 'transparent',
         borderColor: theme.primary,
         data: [
-          2115,
-          1562,
+          500,
+          4000,
           1584,
           1892,
           1487,
@@ -42,9 +42,9 @@ const LineChart = ({ theme }) => {
         ]
       },
       {
-        label: "Orders",
+        label: 'Orders',
         fill: true,
-        backgroundColor: "transparent",
+        backgroundColor: 'transparent',
         borderColor: theme.tertiary,
         borderDash: [4, 4],
         data: [
@@ -86,7 +86,7 @@ const LineChart = ({ theme }) => {
         {
           reverse: true,
           gridLines: {
-            color: "rgba(0,0,0,0.05)"
+            color: 'rgba(0,0,0,0.05)'
           }
         }
       ],
@@ -98,8 +98,8 @@ const LineChart = ({ theme }) => {
           display: true,
           borderDash: [5, 5],
           gridLines: {
-            color: "rgba(0,0,0,0)",
-            fontColor: "#fff"
+            color: 'rgba(0,0,0,0)',
+            fontColor: '#fff'
           }
         }
       ]

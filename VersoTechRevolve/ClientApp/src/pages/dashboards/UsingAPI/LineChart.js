@@ -4,42 +4,32 @@ import { connect } from 'react-redux';
 
 import { Badge, Card, CardBody, CardHeader, CardTitle } from 'reactstrap';
 
-const LineChart = ({ theme }) => {
+const LineChart = ({ theme, sales }) => {
+  const { items, loading } = sales;
+
+  var labels = [];
+  var money = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //need to give initial value for animation
+  var orders = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]; //to happen on initial page load
+
+  if (!loading) {
+    money = []; // clear initial data, and set with real data
+    orders = [];
+    items.forEach(item => {
+      labels.push(item.month);
+      money.push(item.amountOfMoney);
+      orders.push(item.amountOfSales);
+    });
+  }
+
   const data = {
-    labels: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec'
-    ],
+    labels: labels,
     datasets: [
       {
         label: 'Sales ($)',
         fill: true,
         backgroundColor: 'transparent',
         borderColor: theme.primary,
-        data: [
-          2015,
-          1465,
-          1487,
-          1796,
-          1387,
-          2123,
-          2866,
-          2548,
-          3902,
-          4938,
-          3917,
-          4927
-        ]
+        data: money
       },
       {
         label: 'Orders',
@@ -47,20 +37,7 @@ const LineChart = ({ theme }) => {
         backgroundColor: 'transparent',
         borderColor: theme.tertiary,
         borderDash: [4, 4],
-        data: [
-          928,
-          734,
-          626,
-          893,
-          921,
-          1202,
-          1396,
-          1232,
-          1524,
-          2102,
-          1506,
-          1887
-        ]
+        data: orders
       }
     ]
   };
@@ -125,6 +102,9 @@ const LineChart = ({ theme }) => {
   );
 };
 
-export default connect(store => ({
-  theme: store.theme.currentTheme
-}))(LineChart);
+const mapStateToProps = state => ({
+  theme: state.theme.currentTheme,
+  sales: state.sales
+});
+
+export default connect(mapStateToProps)(LineChart);
