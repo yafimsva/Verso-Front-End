@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Container } from 'reactstrap';
 import Header from './Header';
 import { connect } from 'react-redux';
@@ -7,24 +7,22 @@ import { fetchSales } from '../../../redux/actions/salesDataActions';
 
 import Statistics from './Statistics';
 
-class UsingAPI extends React.Component {
-  componentDidMount() {
-    this.props.fetchSales();
-  }
+const UsingAPI = props => {
+	useEffect(() => {
+		props.fetchSales();
+	}, []);
 
-  render() {
-    return (
-      <Container fluid className="p-0">
-        <Header />
-        <Statistics />
-        <LineChart />
-      </Container>
-    );
-  }
-}
+	return (
+		<Container fluid className="p-0">
+			<Header />
+			<Statistics />
+			<LineChart />
+		</Container>
+	);
+};
 
 const mapDispatchToProps = {
-  fetchSales
+	fetchSales
 };
 
 export default connect(null, mapDispatchToProps)(UsingAPI);
