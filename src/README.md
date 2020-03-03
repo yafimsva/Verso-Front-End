@@ -2,7 +2,7 @@
 
 ## To start run in terminal
 ```sh
-npm run
+npm start
 ```
 
 ## Login
