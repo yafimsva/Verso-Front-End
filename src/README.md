@@ -1,7 +1,9 @@
 # Front-End for Verso-Tech
 
-## To start run in terminal
+## Steps to start
+- Navigate to the folder
 ```sh
+npm install
 npm start
 ```
 
