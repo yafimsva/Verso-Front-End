@@ -12,7 +12,7 @@ const Landing = () => {
 	const { loginWithRedirect, isAuthenticated } = useAuth0();
 
 	if (isAuthenticated) {
-		return <Redirect to="/dashboard/using-api" />;
+		return <Redirect to="/dashboard/using-api-glossary" />;
 	}
 
 	return (

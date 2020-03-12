@@ -1,5 +1,5 @@
 {
-	"domain": "dev-aupx-x8j.auth0.com",
-	"clientId": "X3qy2i45mw6rvfXQzlKEX80UapkgYnNF",
-	"audience": "https://salesdata.com"
+	"domain": "verso.auth0.com",
+	"clientId": "g9EziOcVLv9e3ag4U475GOu0J1sEdXA6",
+	"audience": "https://api.versotech.com"
 }

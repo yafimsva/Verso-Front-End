@@ -63,6 +63,9 @@ import Plugins from '../pages/docs/Plugins';
 import Changelog from '../pages/docs/Changelog';
 
 // Dashboards
+const UsingAPIGlossary = async(() =>
+	import('../pages/dashboards/UsingAPIGlossary')
+);
 const UsingAPI = async(() => import('../pages/dashboards/UsingAPI'));
 const Default = async(() => import('../pages/dashboards/Default'));
 const Analytics = async(() => import('../pages/dashboards/Analytics'));
@@ -114,6 +117,11 @@ const dashboardRoutes = {
 	icon: SlidersIcon,
 	containsHome: true,
 	children: [
+		{
+			path: '/dashboard/using-api-glossary',
+			name: 'UsingAPI Glossary',
+			component: UsingAPIGlossary
+		},
 		{
 			path: '/dashboard/using-api',
 			name: 'UsingAPI',

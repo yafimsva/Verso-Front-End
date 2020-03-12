@@ -7,6 +7,7 @@ import layout from '../reducers/layoutReducer';
 import sidebar from '../reducers/sidebarReducers';
 import theme from '../reducers/themeReducer';
 import sales from '../reducers/salesDataReducers';
+import glossary from '../reducers/fetchGlossaryReducer';
 
 export default function configureStore(
 	history: History,
@@ -20,6 +21,7 @@ export default function configureStore(
 		layout,
 		theme,
 		sales,
+		glossary,
 
 		router: connectRouter(history)
 	});
