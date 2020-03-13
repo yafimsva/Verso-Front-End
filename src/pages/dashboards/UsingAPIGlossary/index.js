@@ -1,33 +1,36 @@
 import React, { useEffect } from 'react';
-import { Container, Card, CardHeader, CardBody } from 'reactstrap';
+import { Container, Card, CardHeader, CardBody, Spinner } from 'reactstrap';
 import Header from './Header';
 import { connect } from 'react-redux';
 import { fetchGlossary } from '../../../redux/actions/fetchGlossaryActions';
 
 import { useAuth0 } from '../../../react-auth0-spa';
 
-const UsingAPIGlossary = props => {
+const UsingAPIGlossary = ({ dispatch, glossary }) => {
 	const { getTokenSilently } = useAuth0();
 
 	useEffect(() => {
-		const { dispatch } = props;
 		getTokenSilently().then(result => {
 			dispatch(fetchGlossary(result));
 		});
 		// eslint-disable-next-line
 	}, []);
 
+	const CardsWithData = () => {
+		return glossary.items.map((item, index) => {
+			return (
+				<Card key={index}>
+					<CardHeader>{item.term}</CardHeader>
+					<CardBody>{item.definition}</CardBody>
+				</Card>
+			);
+		});
+	};
+
 	return (
 		<Container fluid className="p-0">
 			<Header />
-			{props.glossary.items.map((item, index) => {
-				return (
-					<Card key={index}>
-						<CardHeader>{item.term}</CardHeader>
-						<CardBody>{item.definition}</CardBody>
-					</Card>
-				);
-			})}
+			{glossary.loading ? <Spinner color="primary" /> : <CardsWithData />}
 		</Container>
 	);
 };

@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 
