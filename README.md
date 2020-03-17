@@ -6,7 +6,3 @@
 npm install
 npm start
 ```
-
-## Login
-- username: yafimsva@gmail.com
-- password: Derminators2018
