@@ -1,24 +1,24 @@
 import * as types from '../constants';
 
-export const fetchGlossarySuccess = products => ({
+export const fetchGlossarySuccess = (products) => ({
 	type: types.FETCH_GLOSSARY_SUCCESS,
-	payload: { products }
+	payload: { products },
 });
 
-export const fetchGlossaryFailure = error => ({
+export const fetchGlossaryFailure = (error) => ({
 	type: types.FETCH_GLOSSARY_FAILURE,
-	payload: { error }
+	payload: { error },
 });
 
-export const fetchGlossary = token => async dispatch => {
-	await fetch('/glossary', {
+export const fetchGlossary = (token) => async (dispatch) => {
+	await fetch('https://greenriverapi.azurewebsites.net/glossary', {
 		headers: {
-			Authorization: `Bearer ${token}`
-		}
+			Authorization: `Bearer ${token}`,
+		},
 	})
 		.then(handleErrors)
-		.then(res => res.json())
-		.then(json => {
+		.then((res) => res.json())
+		.then((json) => {
 			dispatch(fetchGlossarySuccess(json));
 			return json;
 		});
