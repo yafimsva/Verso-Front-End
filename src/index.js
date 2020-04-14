@@ -18,7 +18,7 @@ const history = createBrowserHistory({ basename: baseUrl });
 // Get the application-wide store instance, prepopulating with state from the server where available.
 const store = configureStore(history);
 
-const onRedirectCallback = appState => {
+const onRedirectCallback = (appState) => {
 	history.push(
 		appState && appState.targetUrl
 			? appState.targetUrl

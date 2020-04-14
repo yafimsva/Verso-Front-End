@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import {
 	Button,
@@ -12,11 +13,11 @@ import {
 
 import { Calendar, Filter, RefreshCw } from 'react-feather';
 
-const Header = () => {
+const Header = ({ user }) => {
 	return (
 		<Row className="mb-2 mb-xl-4">
 			<Col xs="auto" className="d-none d-sm-block">
-				<h3>Welcome back, User!</h3>
+				<h3>Welcome back, {user.nickname ? user.nickname : user.name}!</h3>
 			</Col>
 
 			<Col xs="auto" className="ml-auto text-right mt-n1">
@@ -43,5 +44,8 @@ const Header = () => {
 		</Row>
 	);
 };
+const mapStateToProps = (state) => ({
+	user: state.user.data,
+});
 
-export default Header;
+export default connect(mapStateToProps)(Header);

@@ -2,18 +2,21 @@ import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { History } from 'history';
-import { ApplicationState, reducers } from './';
+import { reducers } from './';
+import { logger } from 'redux-logger';
 import layout from '../reducers/layoutReducer';
 import sidebar from '../reducers/sidebarReducers';
 import theme from '../reducers/themeReducer';
 import sales from '../reducers/salesDataReducers';
 import glossary from '../reducers/fetchGlossaryReducer';
+import user from '../reducers/userReducer';
 
-export default function configureStore(
-	history: History,
-	initialState?: ApplicationState
-) {
+export default function configureStore(history: History) {
 	const middleware = [thunk, routerMiddleware(history)];
+
+	if (process.env.NODE_ENV === 'development') {
+		middleware.push(logger);
+	}
 
 	const rootReducer = combineReducers({
 		...reducers,
@@ -22,8 +25,9 @@ export default function configureStore(
 		theme,
 		sales,
 		glossary,
+		user,
 
-		router: connectRouter(history)
+		router: connectRouter(history),
 	});
 
 	const enhancers = [];
@@ -35,7 +39,6 @@ export default function configureStore(
 
 	return createStore(
 		rootReducer,
-		initialState,
 		compose(applyMiddleware(...middleware), ...enhancers)
 	);
 }
