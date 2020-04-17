@@ -1,20 +1,15 @@
 import React, { useEffect } from 'react';
 import { Container, Card, CardHeader, CardBody, Spinner } from 'reactstrap';
-import Header from './Header';
 import { connect } from 'react-redux';
-import { fetchGlossary } from '../../../redux/actions/fetchGlossaryActions';
 
-import { useAuth0 } from '../../../react-auth0-spa';
+import { fetchAPI } from '../../../redux/actions/fetchAPIActions';
 
-const UsingAPIGlossary = ({ dispatch, glossary }) => {
-	const { getTokenSilently } = useAuth0();
+import Header from './Header';
 
+const UsingAPIGlossary = ({ glossary, fetchAPI }) => {
 	useEffect(() => {
-		getTokenSilently().then(result => {
-			dispatch(fetchGlossary(result));
-		});
-		// eslint-disable-next-line
-	}, []);
+		fetchAPI('/glossary');
+	}, [fetchAPI]);
 
 	const CardsWithData = () => {
 		return glossary.items.map((item, index) => {
@@ -35,9 +30,13 @@ const UsingAPIGlossary = ({ dispatch, glossary }) => {
 	);
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
 	glossary: state.glossary,
-	theme: state.theme.currentTheme
+	theme: state.theme.currentTheme,
 });
 
-export default connect(mapStateToProps)(UsingAPIGlossary);
+const mapDispatchToProps = (dispatch) => ({
+	fetchAPI: (endpoint) => dispatch(fetchAPI(endpoint)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(UsingAPIGlossary);

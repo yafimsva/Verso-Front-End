@@ -23,7 +23,7 @@ const childRoutes = (Layout, routes) =>
 					key={index}
 					path={path}
 					exact
-					component={props => (
+					component={(props) => (
 						<Layout>
 							<Component {...props} />
 						</Layout>
@@ -36,7 +36,7 @@ const childRoutes = (Layout, routes) =>
 				key={index}
 				path={path}
 				exact
-				component={props => (
+				component={(props) => (
 					<Layout>
 						<Component {...props} />
 					</Layout>

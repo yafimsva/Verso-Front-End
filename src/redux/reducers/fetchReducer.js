@@ -3,24 +3,24 @@ import * as types from '../constants';
 const initialState = {
 	items: [],
 	loading: true,
-	error: null
+	error: null,
 };
 
 export default function reducer(state = initialState, action) {
 	switch (action.type) {
-		case types.FETCH_GLOSSARY_SUCCESS:
+		case types.FETCH_SUCCESS:
 			return {
 				...state,
 				loading: false,
-				items: action.payload.products
+				items: action.payload.products,
 			};
 
-		case types.FETCH_GLOSSARY_FAILURE:
+		case types.FETCH_FAILURE:
 			return {
 				...state,
 				loading: false,
 				error: action.payload.error,
-				items: []
+				items: [],
 			};
 
 		default:

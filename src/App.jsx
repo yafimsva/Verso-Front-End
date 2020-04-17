@@ -1,21 +1,24 @@
 import React, { useEffect } from 'react';
-import Routes from './routes/Routes';
 import { connect } from 'react-redux';
+
 import { useAuth0 } from './react-auth0-spa';
+import Routes from './routes/Routes';
+
 import { attachUser } from './redux/actions/userActions';
 
 const App = ({ attachUser }) => {
 	const { user } = useAuth0();
-	console.log(user);
-
-	if (user) {
-	}
+	const { getTokenSilently } = useAuth0();
 
 	useEffect(() => {
+		console.log('cheking');
 		if (user) {
 			attachUser(user);
+			getTokenSilently().then((result) => {
+				window.localStorage.setItem('token', result);
+			});
 		}
-	}, [user]);
+	}, [user, attachUser, getTokenSilently]);
 
 	return (
 		<React.Fragment>

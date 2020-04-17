@@ -14,13 +14,9 @@ export const LAYOUT_BOXED_DISABLE = 'LAYOUT_BOXED_DISABLE';
 // Theme
 export const THEME_TOGGLE = 'THEME_TOGGLE';
 
-// Fetch Sales Data
-export const FETCH_SALES_SUCCESS = 'FETCH_SALES_SUCCESS';
-export const FETCH_SALES_FAILURE = 'FETCH_SALES_FAILURE';
-
 // Fetch Glossary Data
-export const FETCH_GLOSSARY_SUCCESS = 'FETCH_GLOSSARY_SUCCESS';
-export const FETCH_GLOSSARY_FAILURE = 'FETCH_GLOSSARY_FAILURE';
+export const FETCH_SUCCESS = 'FETCH_SUCCESS';
+export const FETCH_FAILURE = 'FETCH_FAILURE';
 
 // User
 export const ATTACH_USER = 'ATTACH_USER';
