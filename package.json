@@ -13,7 +13,7 @@
 		"@types/chart.js": "^2.9.13",
 		"@types/jquery": "^3.3.32",
 		"@types/react-redux-toastr": "^7.6.0",
-		"apexcharts": "3.10.1",
+		"apexcharts": "3.24.0",
 		"availity-reactstrap-validation": "2.6.1",
 		"axios": "^0.19.2",
 		"bootstrap": "^4.4.1",
